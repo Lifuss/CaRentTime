@@ -22,7 +22,7 @@ export const fetchAdvertsThunk = createAsyncThunk(
 
 export const loadMoreThunk = createAsyncThunk(
   "loadMoreThunk",
-  async (page: number, thunkApi) => {
+  async (page: number | undefined, thunkApi) => {
     try {
       const { data } = await advertsInstance.get(
         `/adverts?page=${page}&limit=8`
