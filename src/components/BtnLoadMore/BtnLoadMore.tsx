@@ -1,14 +1,8 @@
-import { FC, useState } from "react";
-import { useAppDispatch } from "../../hooks/hooks";
-import { loadMoreThunk } from "../../Redux/carRent/operations";
+type Props = {
+  handleLoadMore?: () => void;
+};
 
-const BtnLoadMore: FC = () => {
-  const dispatch = useAppDispatch();
-
-  const handleLoadMore = () => {
-    dispatch(loadMoreThunk());
-  };
-
+const BtnLoadMore = ({ handleLoadMore }: Props) => {
   return (
     <div className="flex justify-center">
       <button onClick={handleLoadMore} className=" w-20 h-10">

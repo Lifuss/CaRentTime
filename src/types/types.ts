@@ -22,5 +22,5 @@ export interface CarRentState {
   loading: boolean;
   error: null | string;
   favoriteCars: Car[];
-  page: number;
+  // page: number;
 }

@@ -7,7 +7,7 @@ const initialState: CarRentState = {
   loading: false,
   error: null,
   favoriteCars: [],
-  page: 1,
+  // page: 1,
 };
 
 export const slice = createSlice({
@@ -29,9 +29,6 @@ export const slice = createSlice({
       state.favoriteCars = state.favoriteCars.filter(
         (car) => car.id !== payload
       );
-    },
-    loadMore: (state) => {
-      state.page += 1;
     },
   },
   extraReducers: (builder) => {
