@@ -15,7 +15,7 @@ const Favorites = () => {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    const carsPerPage = favoriteCars.slice(0, page * 8);
+    const carsPerPage = favoriteCars.slice(0, page * 12);
     setFavoriteCarsPerPage(carsPerPage);
   }, [page, favoriteCars]);
 

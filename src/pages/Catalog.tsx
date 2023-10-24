@@ -32,7 +32,7 @@ const Catalog: FC = () => {
   return (
     <div className="container mx-auto">
       <CarList carArray={cars} handleAddToFavorites={handleAddToFavorites} />
-      {cars.length !== 25 && <BtnLoadMore handleLoadMore={handleLoadMore} />}
+      {cars.length !== 32 && <BtnLoadMore handleLoadMore={handleLoadMore} />}
     </div>
   );
 };

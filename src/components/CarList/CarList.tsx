@@ -2,6 +2,7 @@ import { Car } from "../../types/types";
 import sprite from "../../assets/sprite.svg";
 import { useSelector } from "react-redux";
 import { selectFavoritesCars } from "../../Redux/carRent/selectors";
+import imgNotFound from "../../assets/placeholder.jpg";
 
 type Props = {
   carArray: Car[];
@@ -33,12 +34,15 @@ const CarList = ({ carArray, handleAddToFavorites }: Props) => {
           return (
             <li
               key={id}
-              className=" flex flex-col justify-between border-2 rounded-xl border-red-200 min-h-[400px] relative basis-1/1 md:basis-1/3 lg:basis-1/5"
+              className=" flex flex-col justify-between   min-h-[400px] relative basis-1/1 md:basis-1/3 lg:basis-1/5"
             >
               <img
                 className=" rounded-xl object-cover mb-[14px] min-h-[268px]  hover:scale-110 hover:z-10 transition "
                 src={`${img}`}
                 alt={model}
+                onError={(e) => {
+                  e.currentTarget.src = imgNotFound;
+                }}
               />
               <div className="mb-2 flex justify-between">
                 <h4>{`${make} ${model} ${year}`}</h4>

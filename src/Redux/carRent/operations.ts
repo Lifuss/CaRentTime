@@ -11,7 +11,7 @@ export const fetchAdvertsThunk = createAsyncThunk(
   async (page: number = 1, thunkApi) => {
     try {
       const { data } = await advertsInstance.get(
-        `/adverts?page=${page}&limit=8`
+        `/adverts?page=${page}&limit=12`
       );
       return data as Car[];
     } catch (error) {
@@ -25,7 +25,7 @@ export const loadMoreThunk = createAsyncThunk(
   async (page: number = 1, thunkApi) => {
     try {
       const { data } = await advertsInstance.get(
-        `/adverts?page=${page}&limit=8`
+        `/adverts?page=${page}&limit=12`
       );
       return data as Car[];
     } catch (error) {
