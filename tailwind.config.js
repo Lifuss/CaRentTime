@@ -3,12 +3,16 @@ import daisyui from "daisyui";
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
+    fontFamily: {
+      display: ["Manrope", "ui-serif"],
+    },
     extend: {
       colors: {
         mainBtn: "#3470FF",
         active: "#0B44CD",
         inputColor: "#F7F7FB",
         textColor: "#121417",
+        subColor: "#12141780",
       },
     },
   },

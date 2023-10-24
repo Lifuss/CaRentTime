@@ -2,7 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
-.active {
-  color: red;
-  background-color: blue;
+@font-face {
+  font-family: "Manrope";
+  font-weight: 400;
+  src: url(./fonts/Manrope-Regular.ttf);
+}
+
+@font-face {
+  font-family: "Manrope";
+  font-weight: 500;
+  src: url(./fonts/Manrope-Medium.ttf);
+}
+@font-face {
+  font-family: "Manrope";
+  font-weight: 600;
+  src: url(./fonts/Manrope-SemiBold.ttf);
+}
+
+@layer base {
+  html {
+    font-family: "Manrope", system-ui, sans-serif;
+    color: #121417;
+  }
 }

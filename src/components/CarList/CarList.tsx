@@ -3,6 +3,7 @@ import sprite from "../../assets/sprite.svg";
 import { useSelector } from "react-redux";
 import { selectFavoritesCars } from "../../Redux/carRent/selectors";
 import imgNotFound from "../../assets/placeholder.jpg";
+import Modal from "../Modal/Modal";
 
 type Props = {
   carArray: Car[];
@@ -45,13 +46,31 @@ const CarList = ({ carArray, handleAddToFavorites }: Props) => {
                 }}
               />
               <div className="mb-2 flex justify-between">
-                <h4>{`${make} ${model} ${year}`}</h4>
-                <p>{rentalPrice}</p>
+                <h4 className="flex gap-1 font-medium">
+                  {`${make}`}
+                  <span className="text-mainBtn">
+                    {`${model}`}
+                    <span className="text-textColor">,</span>
+                  </span>
+                  {`${year}`}
+                </h4>
+                <p className="font-medium">{rentalPrice}</p>
               </div>
-              <div className="mb-7">{`${splitedAddress[1]} | ${splitedAddress[2]} | ${rentalCompany} | Premium | ${type} | ${model} | ${id} | ${functionalities[0]}`}</div>
-              <button className=" transition-colors rounded-xl bg-mainBtn text-white hover:bg-active w-full h-11">
-                learn more
+              <div className="mb-7  text-subColor text-xs leading-[18px]">{`${splitedAddress[1]} | ${splitedAddress[2]} | ${rentalCompany} | Premium | ${type} | ${model} | ${id} | ${functionalities[0]}`}</div>
+              <button
+                className="btn bg-mainBtn hover:bg-active text-white w-full border-0"
+                onClick={() => {
+                  const modal = document.getElementById(
+                    `${id}`
+                  ) as HTMLDialogElement;
+                  if (modal) {
+                    modal.showModal();
+                  }
+                }}
+              >
+                Learn more
               </button>
+              <Modal id={id} />
               <button
                 onClick={() => handleAddToFavorites(id, isFavorite)}
                 className="z-20 absolute right-2 top-2 hover:scale-150 transition"
