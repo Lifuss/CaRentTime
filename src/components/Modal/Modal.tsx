@@ -31,14 +31,14 @@ const Modal = ({ id }: Props) => {
   return (
     <>
       <dialog id={`${id}`} className="modal">
-        <div className="modal-box bg-white p-10">
+        <div className="modal-box bg-white p-8 h-752px">
           <form method="dialog">
             <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
               ✕
             </button>
           </form>
           <img
-            className=" rounded-xl object-cover mb-[14px] min-h-[268px] "
+            className=" rounded-xl object-cover mb-[14px] w-[461px] h-[248px] "
             src={`${img}`}
             alt={model}
             onError={(e) => {
@@ -46,7 +46,7 @@ const Modal = ({ id }: Props) => {
             }}
           />
           <div className="mb-6">
-            <h4 className="flex gap-1 font-mediu mb-2 text-lg">
+            <h4 className="flex gap-1 font-medium mb-2 text-lg">
               {`${make}`}
               <span className="text-mainBtn">
                 {`${model}`}
@@ -72,7 +72,10 @@ const Modal = ({ id }: Props) => {
                   const age = numberMatch[0];
                   const parts = item.split(age);
                   return (
-                    <p className="rounded-lg bg-[#F9F9F9] px-[14px] py-[7px] w-fit text-[#363535]">
+                    <p
+                      key={age}
+                      className="rounded-lg bg-[#F9F9F9] text-xs px-[14px] py-[7px] w-fit text-textColor2"
+                    >
                       {parts[0]}
                       <span className="text-mainBtn">{age}</span>
                       {parts[1]}
@@ -80,29 +83,32 @@ const Modal = ({ id }: Props) => {
                   );
                 } else {
                   return (
-                    <p className="rounded-lg bg-[#F9F9F9] px-[14px] py-[7px] w-fit text-[#363535]">
+                    <p
+                      key={item}
+                      className="rounded-lg text-xs bg-[#F9F9F9] px-[14px] py-[7px] w-fit text-textColor2"
+                    >
                       {item}
                     </p>
                   );
                 }
               })}
-              <p className="rounded-lg bg-[#F9F9F9] px-[14px] py-[7px] w-fit text-[#363535]">
+              <p className="rounded-lg text-xs bg-[#F9F9F9] px-[14px] py-[7px] w-fit text-textColor2">
                 Mileage:{" "}
                 <span className="text-mainBtn">
                   {mileage.toLocaleString("en-US")}
                 </span>
               </p>
-              <p className="rounded-lg bg-[#F9F9F9] px-[14px] py-[7px] w-fit text-[#363535]">
+              <p className="rounded-lg text-xs bg-[#F9F9F9] px-[14px] py-[7px] w-fit text-textColor2">
                 Rental price:
                 <span className="text-mainBtn ml-1">
-                  {rentalPrice.match(/\d+/g)[0]}$
+                  {String(rentalPrice).slice(1)}$
                 </span>
               </p>
             </div>
           </div>
           <a
-            href="tel:+3800123123"
-            className="btn bg-mainBtn hover:bg-active text-white w-full border-0"
+            href="tel:+380730000000"
+            className="btn bg-mainBtn hover:bg-active text-white w-2/5 border-0"
           >
             Rental car
           </a>

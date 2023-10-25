@@ -78,8 +78,8 @@ const CarList = ({ carArray, handleAddToFavorites }: Props) => {
                 <svg className="w-5 h-5">
                   <use
                     className={` ${
-                      isFavorite ? "fill-blue-600" : "fill-none"
-                    } stroke-blue-500 hover:fill-blue`}
+                      isFavorite ? "fill-mainBtn stroke-mainBtn" : "fill-none"
+                    } stroke-[#FFFFFFCC] hover:fill-blue`}
                     href={`${sprite}#heart`}
                   ></use>
                 </svg>

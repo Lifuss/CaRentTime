@@ -13,6 +13,7 @@ export default {
         inputColor: "#F7F7FB",
         textColor: "#121417",
         subColor: "#12141780",
+        textColor2: "#363535",
       },
     },
   },
