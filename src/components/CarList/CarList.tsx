@@ -73,7 +73,7 @@ const CarList = ({ carArray, handleAddToFavorites }: Props) => {
               <Modal id={id} />
               <button
                 onClick={() => handleAddToFavorites(id, isFavorite)}
-                className="z-20 absolute right-2 top-2 hover:scale-150 transition"
+                className="absolute right-2 top-2 hover:scale-150 transition"
               >
                 <svg className="w-5 h-5">
                   <use

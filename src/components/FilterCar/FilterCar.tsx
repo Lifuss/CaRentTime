@@ -60,7 +60,7 @@ const FilterCar = () => {
             render={({ field }) => (
               <Select
                 {...field}
-                className="w-[224px] bg-inputColor"
+                className="w-[224px] bg-inputColor rounded-[14px]"
                 options={make}
                 isClearable={true}
                 classNamePrefix="select"
@@ -80,7 +80,7 @@ const FilterCar = () => {
             render={({ field }) => (
               <Select
                 {...field}
-                className="w-[224px]"
+                className="w-[224px] bg-inputColor rounded-[14px]"
                 options={price}
                 isClearable={true}
                 classNamePrefix="select"
