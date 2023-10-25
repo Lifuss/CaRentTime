@@ -6,6 +6,7 @@ import { useSelector } from "react-redux";
 import BtnLoadMore from "../components/BtnLoadMore/BtnLoadMore";
 import { addFavoriteCar, removeFavoriteCar } from "../Redux/carRent/slice";
 import CarList from "../components/CarList/CarList";
+import FilterCar from "../components/FilterCar/FilterCar";
 
 const Catalog: FC = () => {
   const [page, setPage] = useState(1);
@@ -31,6 +32,7 @@ const Catalog: FC = () => {
 
   return (
     <div className="container mx-auto">
+      <FilterCar />
       <CarList carArray={cars} handleAddToFavorites={handleAddToFavorites} />
       {cars.length !== 32 && <BtnLoadMore handleLoadMore={handleLoadMore} />}
     </div>
