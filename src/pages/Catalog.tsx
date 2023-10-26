@@ -1,7 +1,15 @@
 import { FC, useEffect, useState } from "react";
-import { fetchAdvertsThunk, loadMoreThunk } from "../Redux/carRent/operations";
+import {
+  fetchAdvertsThunk,
+  fetchFilteredCarsThunk,
+  loadMoreThunk,
+} from "../Redux/carRent/operations";
 import { useAppDispatch } from "../hooks/hooks";
-import { selectCars } from "../Redux/carRent/selectors";
+import {
+  selectCars,
+  selectCriteria,
+  selectIsFiltered,
+} from "../Redux/carRent/selectors";
 import { useSelector } from "react-redux";
 import BtnLoadMore from "../components/BtnLoadMore/BtnLoadMore";
 import { addFavoriteCar, removeFavoriteCar } from "../Redux/carRent/slice";
@@ -12,6 +20,8 @@ const Catalog: FC = () => {
   const [page, setPage] = useState(1);
   const dispatch = useAppDispatch();
   const cars = useSelector(selectCars);
+  const isFiltered = useSelector(selectIsFiltered);
+  const criteria = useSelector(selectCriteria);
 
   useEffect(() => {
     dispatch(fetchAdvertsThunk(1));
@@ -27,15 +37,22 @@ const Catalog: FC = () => {
   const handleLoadMore = () => {
     const nextPage = page + 1;
     setPage(nextPage);
-    dispatch(loadMoreThunk(nextPage));
+    if (!isFiltered) {
+      dispatch(loadMoreThunk(nextPage));
+    }
+    const DataLoad = { ...criteria, page: nextPage };
+    dispatch(fetchFilteredCarsThunk(DataLoad));
   };
 
   return (
-    <div className="container mx-auto">
-      <FilterCar />
+    <section className="container mx-auto">
+      <FilterCar isFavoriteList={false} page={page} />
+
       <CarList carArray={cars} handleAddToFavorites={handleAddToFavorites} />
-      {cars.length !== 32 && <BtnLoadMore handleLoadMore={handleLoadMore} />}
-    </div>
+      {cars.length % 12 === 0 && cars.length !== 0 && cars.length !== 32 && (
+        <BtnLoadMore handleLoadMore={handleLoadMore} />
+      )}
+    </section>
   );
 };
 

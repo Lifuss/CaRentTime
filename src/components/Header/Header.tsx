@@ -1,11 +1,13 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const Header = () => {
   return (
-    <header className=" flex container mx-auto">
-      <a className="btn btn-ghost normal-case text-xl lg:mr-[500px]">LOGO</a>
+    <header className="container grid grid-cols-3 mx-auto ">
+      <Link to="/" className="btn btn-ghost normal-case text-xl">
+        LOGO
+      </Link>
 
-      <nav className="flex justify-center ">
+      <nav className="flex justify-center col-span-2">
         <ul className="menu menu-horizontal gap-4 px-1">
           <li>
             <NavLink to={"/"} aria-label="link to hame page">

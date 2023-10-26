@@ -1,15 +1,16 @@
 import { useSelector } from "react-redux";
-import { Car } from "../../types/types";
-import { selectCars } from "../../Redux/carRent/selectors";
+import { selectCars, selectFavoritesCars } from "../../Redux/carRent/selectors";
 import imgNotFound from "../../assets/placeholder.jpg";
 
 type Props = {
   id: number;
+  isFavorite: boolean;
 };
 
-const Modal = ({ id }: Props) => {
-  const cars: Car[] = useSelector(selectCars);
-  const carToModal = cars.find((car) => car.id === id);
+const Modal = ({ id, isFavorite }: Props) => {
+  const carArray = useSelector(isFavorite ? selectFavoritesCars : selectCars);
+
+  const carToModal = carArray.find((car) => car.id === id);
   const {
     img,
     year,
@@ -26,6 +27,7 @@ const Modal = ({ id }: Props) => {
     mileage,
     rentalPrice,
   } = carToModal!;
+
   const splitedAddress = address.split(",");
   const splitedRentalConditions = rentalConditions.split("\n");
   return (
@@ -101,7 +103,7 @@ const Modal = ({ id }: Props) => {
               <p className="rounded-lg text-xs bg-[#F9F9F9] px-[14px] py-[7px] w-fit text-textColor2">
                 Rental price:
                 <span className="text-mainBtn ml-1">
-                  {String(rentalPrice).slice(1)}$
+                  {rentalPrice.slice(1)}$
                 </span>
               </p>
             </div>

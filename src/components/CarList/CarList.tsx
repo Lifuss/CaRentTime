@@ -38,7 +38,7 @@ const CarList = ({ carArray, handleAddToFavorites }: Props) => {
               className=" flex flex-col justify-between   min-h-[400px] relative basis-1/1 md:basis-1/3 lg:basis-1/5"
             >
               <img
-                className=" rounded-xl object-cover mb-[14px] min-h-[268px]  hover:scale-110 hover:z-10 transition "
+                className=" rounded-xl object-cover mb-[14px] min-h-[268px]  hover:scale-110 transition "
                 src={`${img}`}
                 alt={model}
                 onError={(e) => {
@@ -70,16 +70,16 @@ const CarList = ({ carArray, handleAddToFavorites }: Props) => {
               >
                 Learn more
               </button>
-              <Modal id={id} />
+              <Modal id={id} isFavorite={isFavorite} />
               <button
                 onClick={() => handleAddToFavorites(id, isFavorite)}
-                className="absolute right-2 top-2 hover:scale-150 transition"
+                className="absolute right-2 top-2 hover:scale-150 transition "
               >
                 <svg className="w-5 h-5">
                   <use
                     className={` ${
                       isFavorite ? "fill-mainBtn stroke-mainBtn" : "fill-none"
-                    } stroke-[#FFFFFFCC] hover:fill-blue`}
+                    } stroke-[#FFFFFFCC] hover:fill-blue `}
                     href={`${sprite}#heart`}
                   ></use>
                 </svg>

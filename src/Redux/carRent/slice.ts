@@ -1,13 +1,21 @@
+import { FilterCriteria } from "./../../types/types";
 import { Car, CarRentState } from "../../types/types";
 import { createSlice } from "@reduxjs/toolkit";
-import { fetchAdvertsThunk, loadMoreThunk } from "./operations";
+import {
+  fetchAdvertsThunk,
+  fetchFilteredCarsThunk,
+  loadMoreThunk,
+} from "./operations";
+import { FilterFavoritesService } from "../../services/filterFavorites";
 
 const initialState: CarRentState = {
   cars: [],
   loading: false,
   error: null,
   favoriteCars: [],
-  // page: 1,
+  filteredCars: [],
+  isFiltered: false,
+  criteria: { make: "", mileageFrom: "", mileageTo: "", price: "" },
 };
 
 export const slice = createSlice({
@@ -30,19 +38,38 @@ export const slice = createSlice({
         (car) => car.id !== payload
       );
     },
+    filterFavorites: (state, { payload }: { payload: FilterCriteria }) => {
+      console.log(payload);
+      state.filteredCars = FilterFavoritesService(state.favoriteCars, payload);
+      state.isFiltered = true;
+    },
   },
   extraReducers: (builder) => {
     builder
       .addCase(fetchAdvertsThunk.fulfilled, (state, { payload }) => {
         state.cars = payload as Car[];
         state.loading = false;
+        state.isFiltered = false;
       })
       .addCase(loadMoreThunk.fulfilled, (state, { payload }) => {
         state.cars.push(...(payload as Car[]));
+      })
+      .addCase(fetchFilteredCarsThunk.fulfilled, (state, { payload }) => {
+        console.log(payload);
+        if (payload && "arrCars" in payload) {
+          state.cars = payload.arrCars;
+        } else {
+          state.cars = [];
+        }
+        if (payload && "filterCriteria" in payload) {
+          state.criteria = payload.filterCriteria;
+        }
+        state.isFiltered = true;
       });
   },
 });
 
-export const { addFavoriteCar, removeFavoriteCar } = slice.actions;
+export const { addFavoriteCar, removeFavoriteCar, filterFavorites } =
+  slice.actions;
 
 export const carRentSlice = slice.reducer;

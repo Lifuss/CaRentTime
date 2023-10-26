@@ -1,12 +1,10 @@
 import Select from "react-select";
 import { useForm, Controller, SubmitHandler } from "react-hook-form";
-
-type Inputs = {
-  make: string;
-  price: string;
-  mileageFrom: number;
-  mileageTo: number;
-};
+import { useAppDispatch } from "../../hooks/hooks";
+import { fetchFilteredCarsThunk } from "../../Redux/carRent/operations";
+import { FilterData } from "../../types/types";
+import { toast } from "react-toastify";
+import { filterFavorites } from "../../Redux/carRent/slice";
 
 const make = [
   { value: "Buick", label: "Buick" },
@@ -39,15 +37,50 @@ const price = [
   { value: "80", label: "80" },
 ];
 
-const FilterCar = () => {
-  const { register, handleSubmit, control } = useForm<Inputs>();
+type Props = {
+  isFavoriteList: boolean;
+  page?: number;
+};
 
-  const onSubmit: SubmitHandler<Inputs> = (data) => console.log(data);
+const FilterCar = ({ isFavoriteList }: Props) => {
+  const { register, handleSubmit, control } = useForm<FilterData>();
+  const dispatch = useAppDispatch();
+
+  const onSubmit: SubmitHandler<FilterData> = ({
+    price,
+    make,
+    mileageTo,
+    mileageFrom,
+  }) => {
+    if (price || make || mileageFrom || mileageTo) {
+      if (isFavoriteList) {
+        dispatch(
+          filterFavorites({
+            price: price?.value,
+            make: make?.value,
+            mileageFrom,
+            mileageTo,
+          })
+        );
+      } else {
+        dispatch(
+          fetchFilteredCarsThunk({
+            price: price?.value,
+            make: make?.value,
+            mileageFrom,
+            mileageTo,
+          })
+        );
+      }
+    } else {
+      toast.info("Oops, for filtering, you need to fill in at least one field");
+    }
+  };
 
   return (
-    <div className="flex justify-center my-[50px]">
+    <div className=" my-[50px]">
       <form
-        className="flex justify-center align-baseline"
+        className="flex justify-center gap-[18px] items-center"
         onSubmit={handleSubmit(onSubmit)}
       >
         <label>
@@ -110,7 +143,9 @@ const FilterCar = () => {
           </label>
         </div>
 
-        <button>search</button>
+        <button className="rounded-xl h-12 w-[136px] bg-mainBtn hover:bg-active text-white mt-[22px]">
+          search
+        </button>
       </form>
     </div>
   );

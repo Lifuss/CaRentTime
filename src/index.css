@@ -25,3 +25,9 @@
     color: #121417;
   }
 }
+.css-13cymwt-control {
+  @apply bg-inputColor rounded-[14px] border-0 h-[48px] !important;
+}
+.active {
+  @apply bg-blue-300 rounded-[14px] border-0 !important;
+}
