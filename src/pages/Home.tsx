@@ -26,7 +26,7 @@ const Home = () => {
             </h3>
           </div>
           {/* About us */}
-          <div className="w-[450px]  absolute bottom-[40%]  h-1/5 lg:left-[5%] xl:left-[14%] 2xl:left-[25%] px-2">
+          <div className="w-[450px]  absolute bottom-[40%]  h-1/5 lg:left-[5%] xl:left-[14%] 2xl:left-[26%] px-2">
             <div className="flex justify-center  mb-2">
               <img
                 src="https://www.hillsun.com/wp-content/uploads/2016/02/Icon-About-Us.png"
@@ -90,7 +90,7 @@ const Home = () => {
             </ul>
           </div>
           {/* Contact us */}
-          <div className="w-[450px] h-1/5 absolute flex flex-col items-center lg:bottom-[20%] lg:left-[5%] xl:left-[14%] 2xl:left-[25%]">
+          <div className="w-[450px] h-1/5 absolute flex flex-col items-center lg:bottom-[20%] lg:left-[5%] xl:left-[14%] 2xl:left-[26%]">
             <div className="flex justify-center mb-2">
               <img
                 src="https://cdn0.iconfinder.com/data/icons/simpline-mix/64/simpline_49-512.png"
