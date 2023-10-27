@@ -45,7 +45,7 @@ const Catalog: FC = () => {
   };
 
   return (
-    <section className="container mx-auto">
+    <section className="container mx-auto pb-5">
       <FilterCar isFavoriteList={false} page={page} />
 
       <CarList carArray={cars} handleAddToFavorites={handleAddToFavorites} />

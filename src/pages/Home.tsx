@@ -113,7 +113,11 @@ const Home = () => {
 
             <ul className="flex gap-6">
               <li>
-                <a href="https://facebook.com/" rel="noreferrer noopener">
+                <a
+                  href="https://facebook.com/"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                >
                   <img
                     src="https://th.bing.com/th/id/R.b71261c8579351e0800709cf47e1880b?rik=mdFLPlOrF9SfuQ&riu=http%3a%2f%2fpluspng.com%2fimg-png%2ffacebook-transparent-pics-image-38360-512.png&ehk=uC5QqB9VLoIOTv1ptmGKBoBm2QxkOadfKk3SfIsFcM4%3d&risl=&pid=ImgRaw&r=0"
                     alt="facebook icon"
@@ -123,7 +127,11 @@ const Home = () => {
                 </a>
               </li>
               <li>
-                <a href="https://instagram.com/" rel="noreferrer noopener">
+                <a
+                  href="https://instagram.com/"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                >
                   <img
                     src="https://th.bing.com/th/id/R.735dda68880a385ce8cc5be4f3c5fcd6?rik=qSxRw2lCZYy9Mw&riu=http%3a%2f%2fpngimg.com%2fuploads%2finstagram%2finstagram_PNG11.png&ehk=QVCbfkCKi8pJLF08bRkS%2fLeMqLTnJQf402WRaIdN6jE%3d&risl=&pid=ImgRaw&r=0"
                     alt="instagram icon"
@@ -133,7 +141,11 @@ const Home = () => {
                 </a>
               </li>
               <li>
-                <a href="https://twitter.com/" rel="noreferrer noopener">
+                <a
+                  href="https://twitter.com/"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                >
                   <img
                     src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/WikiProject_X_icon.svg/1024px-WikiProject_X_icon.svg.png"
                     alt="x icon"
