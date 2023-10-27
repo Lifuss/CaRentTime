@@ -54,7 +54,7 @@ const Home = () => {
             </div>
             <p className="text-base  mb-4">
               Rental car service with a driver, without a driver, for a wedding,
-              anythig you want more than 10 cities in Ukraine
+              anything you want in more than 10 cities in Ukraine
             </p>
           </div>
           {/* buttons group */}
