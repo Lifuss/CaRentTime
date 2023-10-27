@@ -1,8 +1,8 @@
 {
-  "name": "ca-rent",
+  "name": "ca-rent-time",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://lifuss.github.io/ca-rent/",
+  "homepage": "https://lifuss.github.io/ca-rent-time/",
   "type": "module",
   "scripts": {
     "dev": "vite",
