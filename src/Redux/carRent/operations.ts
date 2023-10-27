@@ -39,7 +39,6 @@ export const fetchFilteredCarsThunk = createAsyncThunk(
   "fetchFilteredCarsThunk",
   async (filterCriteria: FilterCriteria, thunkApi) => {
     const { make, mileageFrom, mileageTo, price, page = 1 } = filterCriteria;
-    console.log(filterCriteria);
 
     try {
       let arrCars: Car[] = [];

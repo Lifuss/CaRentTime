@@ -3,7 +3,7 @@ import logo from "../../assets/CT-Logo-web-side.jpg";
 
 const Header = () => {
   return (
-    <header className="container grid grid-cols-3 mx-auto items-center  ">
+    <header className="container grid grid-cols-3 mx-auto px-24 ">
       <Link to="/" className="hover:opacity-75">
         <img src={logo} alt="logo" width={48} height={48} />
       </Link>

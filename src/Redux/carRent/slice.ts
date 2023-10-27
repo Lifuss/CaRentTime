@@ -39,7 +39,6 @@ export const slice = createSlice({
       );
     },
     filterFavorites: (state, { payload }: { payload: FilterCriteria }) => {
-      console.log(payload);
       state.filteredCars = FilterFavoritesService(state.favoriteCars, payload);
       state.isFiltered = true;
     },
@@ -55,7 +54,7 @@ export const slice = createSlice({
         state.cars.push(...(payload as Car[]));
       })
       .addCase(fetchFilteredCarsThunk.fulfilled, (state, { payload }) => {
-        console.log(payload);
+
         if (payload && "arrCars" in payload) {
           state.cars = payload.arrCars;
         } else {
