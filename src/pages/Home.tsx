@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 const Home = () => {
   return (
     <>
-      {/*     hero */}
       <section className="text-white">
+        {/*     hero */}
         <div
           className="hero min-h-screen relative bg-cover bg-center -z-10"
           style={{
@@ -17,7 +17,7 @@ const Home = () => {
         <div>
           {" "}
           {/* title */}
-          <div className="absolute text-center mx-auto top-[10%] left-0 right-0">
+          <div className="absolute  text-center mx-auto top-[10%] left-0 right-0 ">
             <h1 className="text-5xl mb-4 mt-20">
               Ca<span className="text-blue-500 uppercase">r</span>ent Time
             </h1>
@@ -26,7 +26,7 @@ const Home = () => {
             </h3>
           </div>
           {/* About us */}
-          <div className="w-[450px] h-1/5 absolute bottom-[40%] left-1/4">
+          <div className="w-[450px]  absolute bottom-[40%]  h-1/5 lg:left-[5%] xl:left-[14%] 2xl:left-[25%] px-2">
             <div className="flex justify-center  mb-2">
               <img
                 src="https://www.hillsun.com/wp-content/uploads/2016/02/Icon-About-Us.png"
@@ -42,7 +42,7 @@ const Home = () => {
             </p>
           </div>
           {/* We offer */}
-          <div className="w-[450px] h-1/5 absolute bottom-[40%] right-1/4">
+          <div className="w-[450px]  absolute bottom-[40%] h-1/5 lg:right-[5%]  xl:right-[10%] 2xl:right-[23%] px-2">
             <div className="flex justify-center  mb-2">
               <img
                 src="https://www.clipartmax.com/png/full/290-2908659_login-icon-png-free-user-access-icon.png"
@@ -58,7 +58,7 @@ const Home = () => {
             </p>
           </div>
           {/* buttons group */}
-          <div className="w-[450px] h-1/5 absolute bottom-1/4 right-1/4">
+          <div className="w-[450px] h-1/5 absolute  lg:bottom-[20%] lg:right-[5%] xl:right-[10%] 2xl:right-[23%]">
             <div className="flex justify-center  mb-4">
               <img
                 src="https://usercontent.one/wp/rentfrom.mndutchcarrental.nl/wp-content/uploads/2019/05/auto.png?media=1637724050"
@@ -90,7 +90,7 @@ const Home = () => {
             </ul>
           </div>
           {/* Contact us */}
-          <div className="w-[450px] h-1/5 absolute bottom-1/4 left-1/4 flex flex-col items-center ">
+          <div className="w-[450px] h-1/5 absolute flex flex-col items-center lg:bottom-[20%] lg:left-[5%] xl:left-[14%] 2xl:left-[25%]">
             <div className="flex justify-center mb-2">
               <img
                 src="https://cdn0.iconfinder.com/data/icons/simpline-mix/64/simpline_49-512.png"
