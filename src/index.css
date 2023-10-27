@@ -29,5 +29,16 @@
   @apply bg-inputColor rounded-[14px] border-0 h-[48px] !important;
 }
 .active {
-  @apply bg-blue-300 rounded-[14px] border-0 !important;
+  @apply bg-blue-400 text-white rounded-[14px] border-0 !important;
+}
+.active:hover {
+  @apply hover:text-white !important;
+}
+@media (hover: hover) {
+  .btn:hover {
+    border-color: rgba(0, 0, 0, 0);
+  }
+}
+.hero {
+  @apply place-items-start;
 }

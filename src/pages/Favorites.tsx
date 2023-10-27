@@ -11,6 +11,7 @@ import CarList from "../components/CarList/CarList";
 import { useAppDispatch } from "../hooks/hooks";
 import { removeFavoriteCar } from "../Redux/carRent/slice";
 import FilterCar from "../components/FilterCar/FilterCar";
+import notAdded from "../assets/nothing.png";
 
 const Favorites = () => {
   const [page, setPage] = useState(1);
@@ -53,13 +54,20 @@ const Favorites = () => {
         </div>
       ) : (
         <div className="container mx-auto text-center h-[70vh] mt-[16%]">
-          <h2 className="text-2xl">Favorites cars not added yet</h2>{" "}
+          <img
+            src={notAdded}
+            alt="magnifying icon"
+            width={128}
+            height={128}
+            className="mx-auto mb-4"
+          />
+          <h2 className="text-2xl">Favorites cars not added yet</h2>
           <p className="text-2xl">
             go to{" "}
             <Link className="mr-1 text-mainBtn underline" to="/catalog">
               Catalog
             </Link>
-            and chose favorites cars{" "}
+            and chose favorites cars by clicking hearts
           </p>
         </div>
       )}

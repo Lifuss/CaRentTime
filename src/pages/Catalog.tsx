@@ -49,7 +49,7 @@ const Catalog: FC = () => {
       <FilterCar isFavoriteList={false} page={page} />
 
       <CarList carArray={cars} handleAddToFavorites={handleAddToFavorites} />
-      {cars.length % 12 === 0 && cars.length !== 0 && cars.length !== 32 && (
+      {cars.length % 12 === 0 && cars.length !== 0 && cars.length !== 35 && (
         <BtnLoadMore handleLoadMore={handleLoadMore} />
       )}
     </section>

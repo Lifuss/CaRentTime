@@ -38,7 +38,7 @@ const CarList = ({ carArray, handleAddToFavorites }: Props) => {
               className=" flex flex-col justify-between   min-h-[400px] relative basis-1/1 md:basis-1/3 lg:basis-1/5"
             >
               <img
-                className=" rounded-xl object-cover mb-[14px] min-h-[268px]  hover:scale-110 transition "
+                className=" rounded-xl object-cover mb-[14px] min-h-[268px]"
                 src={`${img}`}
                 alt={model}
                 onError={(e) => {

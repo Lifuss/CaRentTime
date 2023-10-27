@@ -16,6 +16,8 @@ export default {
         subColor2: "#8A8A89",
         textColor2: "#363535",
         border: "#8A8A8933",
+        bgColorFrom: "rgba(0, 0, 0, 0.7)",
+        bgColorTo: "rgba(0, 0, 0, 0.7)",
       },
     },
   },
