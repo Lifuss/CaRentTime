@@ -11,7 +11,7 @@ import "react-toastify/dist/ReactToastify.css";
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <Provider store={store}>
     <PersistGate loading={null} persistor={persistor}>
-      <BrowserRouter basename="CaRentTime">
+      <BrowserRouter basename="ca-rent">
         <App />
         <ToastContainer
           position="bottom-right"
