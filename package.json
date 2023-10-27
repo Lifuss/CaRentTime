@@ -2,7 +2,7 @@
   "name": "rent-car",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://Lifuss.github.io/rent-car/",
+  "homepage": "https://lifuss.github.io/rent-car/",
   "type": "module",
   "scripts": {
     "dev": "vite",
